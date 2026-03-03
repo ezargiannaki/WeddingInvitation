@@ -1,0 +1,397 @@
+:root{
+  --bg:#f6f6f4;
+  --paper: rgba(255,255,255,.88);
+  --stroke: rgba(0,0,0,.09);
+  --shadow: 0 14px 40px rgba(0,0,0,.10);
+  --radius: 24px;
+
+  --sage:#8ba888;
+  --sage-dark:#6f8f6d;
+  --text:#2f2f2f;
+  --muted: rgba(0,0,0,.55);
+
+  --heading:"Playfair Display", serif;
+  --body:"Montserrat", system-ui, sans-serif;
+  --cursive: "Marck Script", cursive;
+}
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+
+body{
+  margin:0;
+  font-family: var(--body);
+  color: var(--text);
+  background: var(--bg);
+  overflow-x:hidden;
+}
+
+/* Κεντραρισμένο “χαρτί” στη μέση της σελίδας */
+.page{
+  min-height: 100vh;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  padding: 34px 14px 60px;
+}
+
+.paper{
+  width: min(920px, 100%);
+  background: var(--paper);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px 16px 10px;
+  text-align:center;
+}
+
+/* HERO */
+.hero{
+  padding: 56px 10px 18px;
+}
+
+.names{
+  font-family: var(--cursive);
+  font-weight: 400;
+  font-size: clamp(56px, 8vw, 96px);
+  margin: 0 0 10px;
+  color: var(--sage-dark);
+}
+
+.subtitle{
+  margin: 0 0 10px;
+  font-family: var(--heading);
+  font-size: 18px;
+  color: rgba(0,0,0,.52);
+}
+
+.date{
+  margin: 0;
+  font-family: var(--heading);
+  font-size: 18px;
+  color: var(--muted);
+}
+
+/* COUNTDOWN */
+.countdown-wrap{
+  margin: 18px auto 6px;
+  padding: 18px 12px 8px;
+}
+
+.section-title{
+  margin: 0 0 12px;
+  font-family: var(--heading);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,.50);
+}
+
+.countdown-row{
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.cd-group{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap: 10px;
+}
+
+.cd-box{
+  width: 82px;
+  height: 62px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.92);
+  border: 1px solid var(--stroke);
+  box-shadow: 0 10px 22px rgba(0,0,0,.07);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.cd-box span{
+  font-family: var(--heading);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  font-size: 34px;
+  letter-spacing: .04em;
+  color: rgba(0,0,0,.42);
+}
+
+.cd-label{
+  font-size: 11px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,.52);
+}
+
+.cd-sep{
+  margin-top: 14px;
+  font-family: var(--heading);
+  font-weight: 700;
+  font-size: 26px;
+  color: rgba(0,0,0,.22);
+}
+
+/* Cards */
+.card{
+  width: min(860px, 100%);
+  margin: 16px auto;
+  padding: 22px 16px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.78);
+  border: 1px solid var(--stroke);
+  box-shadow: 0 12px 28px rgba(0,0,0,.08);
+}
+
+.card-title{
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+/* γραμμή από κάτω */
+.card-title::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:0;
+  width:60px;
+  height:1px;
+  opacity:.6;
+  letter-spacing: .18em;
+  background: var(--sage); /* ίδιο χρώμα με κουμπιά */
+  border-radius:2px;
+}
+
+.card-text{
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.intro{
+  margin:0;
+  font-family: var(--heading);
+  font-size: 20px;
+  color: rgba(0,0,0,.60);
+  line-height: 1.65;
+}
+
+/* Buttons */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  margin-top: 14px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  text-decoration:none;
+  font-weight: 600;
+  color: #fff;
+  background: var(--sage);
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 10px 22px rgba(0,0,0,.10);
+  transition: transform .15s ease, opacity .15s ease;
+  cursor: pointer;
+}
+
+.btn:hover{ transform: translateY(-2px); opacity:.92; }
+.btn:active{ transform: translateY(0); }
+.btn.dark{ background: #222; }
+.btn.small{
+  padding: 10px 14px;
+  font-size: 13px;
+}
+
+/* Map */
+.map{
+  margin-top: 16px;
+  border-radius: 16px;
+  overflow:hidden;
+  border: 1px solid var(--stroke);
+  background:#fff;
+}
+
+.map iframe{
+  width:100%;
+  height: 320px;
+  border:0;
+}
+
+/* Lists (Κουμπάροι) */
+.list{
+  margin-top: 8px;
+  display:grid;
+  gap: 10px;
+  text-align:left;
+  max-width: 520px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.list-item{
+  display:flex;
+  align-items:flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.70);
+  border: 1px solid var(--stroke);
+}
+
+.dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--sage);
+  margin-top: 6px;
+}
+
+.list-text{
+  color: rgba(0,0,0,.62);
+  line-height: 1.5;
+}
+
+/* Gift */
+.gift-grid{
+  margin-top: 14px;
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.gift-box{
+  padding: 14px 12px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.70);
+  border: 1px solid var(--stroke);
+  text-align:center;
+}
+
+.gift-label{
+  font-family: var(--heading);
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: rgba(0,0,0,.60);
+  margin-bottom: 10px;
+}
+
+.gift-value{
+  font-family: var(--heading);
+  font-weight: 500;
+  color: rgba(0,0,0,.70);
+  margin-bottom: 12px;
+  word-break: break-word;
+  letter-spacing: .02em;
+  font-size: 15.5px;
+}
+
+.hint{
+  margin: 12px 0 0;
+  color: rgba(0,0,0,.46);
+  font-size: 12px;
+}
+
+/* Footer */
+.footer{
+  width: min(860px, 100%);
+  margin: 16px auto 26px;
+  padding: 18px 16px;
+  color: rgba(0,0,0,.55);
+}
+
+/* Fade-in */
+.fade-in{ opacity:0; transform: translateY(18px); transition: 0.9s ease; }
+.fade-in.visible{ opacity:1; transform:none; }
+
+@media (max-width: 620px){
+  .cd-box{ width: 74px; height: 58px; }
+  .cd-box span{ font-size: 30px; }
+  .cd-sep{ margin-top: 12px; }
+  .gift-grid{ grid-template-columns: 1fr; }
+  .map iframe{ height: 260px; }
+}
+
+.list{
+  text-align: center;
+}
+
+.list-item{
+  display: flex;
+  flex-direction: column;   /* ← ΤΟ ΚΡΙΣΙΜΟ */
+  align-items: center;      /* κεντράρισμα */
+  gap: 4px;
+}
+.list-text{
+  width: 100%;
+  text-align: center;
+}
+
+/* CONTACT SECTION */
+
+.contact-grid{
+  margin-top:14px;
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap:14px;
+}
+
+.contact-box{
+  padding:18px 12px;
+  border-radius:16px;
+  background: rgba(255,255,255,.70);
+  border:1px solid var(--stroke);
+  text-align:center;
+}
+
+.contact-name{
+  font-family: var(--heading);
+  font-weight:600;
+  margin-bottom:6px;
+}
+
+.contact-phone{
+  text-decoration:none;
+  color: var(--sage-dark);
+  font-weight:500;
+}
+
+.contact-phone:hover{
+  text-decoration:underline;
+}
+
+@media (max-width:600px){
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
