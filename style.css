@@ -51,7 +51,8 @@ body{
 }
 
 .names{
-  font-family: var(--cursive);
+  /*font-family: var(--cursive);*/
+  font-family: var(--heading);
   font-weight: 400;
   font-size: clamp(56px, 8vw, 96px);
   margin: 0 0 10px;
